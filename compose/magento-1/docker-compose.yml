@@ -6,6 +6,7 @@ version: "3"
 services:
   app:
     build: images/nginx
+    restart: always
     ports:
       - 80:80
     links:
@@ -14,11 +15,13 @@ services:
 
   phpfpm:
     image: markoshust/magento-php:5.6-fpm
+    restart: always
     links:
       - db
 
   db:
     image: percona:5.7
+    restart: always
     ports:
       - 3306:3306
     env_file: env/db.env
