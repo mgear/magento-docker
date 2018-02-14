@@ -104,7 +104,7 @@ Open `PHPStorm > Preferences > Languages & Frameworks > PHP > Debug` and set:
 - Host: `10.254.254.254`
 - Port: `9001`
 
-Create a new server at  `PHPStorm > Preferences > Languages & Frameworks > PHP > Servers`. Set `localhost` as the name and host, check `Shared`, leave port `80`, and debugger `Xdebug`. Check `Use path mappings` and assigned the `src` File/Directory to the absolute path on the server of `/var/www/html`.
+Create a new server at  `PHPStorm > Preferences > Languages & Frameworks > PHP > Servers`. Set your domain (ex. `magento2.test`) as the name and host, check `Shared`, leave port `80`, and debugger `Xdebug`. Check `Use path mappings` and assigned the `src` File/Directory to the absolute path on the server of `/var/www/html`.
 
 Create a new `PHP Remote Debug` configuration at `Run > Edit Configurations`. Name it `localhost`. Check `Filter debug connection by IDE Key`, select server `localhost`, and set IDE key to `PHPSTORM`.
 
