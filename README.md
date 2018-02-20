@@ -96,12 +96,16 @@ See the `compose` folder for sample setups for both Magento 1 and Magento 2. Bas
 
 ### PHPStorm & Xdebug
 
-Open `PHPStorm > Preferences > Languages & Frameworks > PHP` and configure:
+First, enable Xdebug in the PHP-FPM container by running: `./bin/xdebug enable`
+
+Then, open `PHPStorm > Preferences > Languages & Frameworks > PHP` and configure:
 
 - `CLI Interpreter`:
 	- Create a new interpreter and specify `From Docker`, and name it `phpfpm`.
 	- Choose `Docker`, then select the `markoshust/magento-php:7-0-fpm` image name, and set the `PHP Executable` to `php`.
-	- Under `Additional > Debugger Extension`, enter `/usr/local/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so`.
+	- Under `Additional > Debugger Extension`, enter
+		- for M1: `/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so`
+		- for M2: `/usr/local/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so`
 	- Hitting the reload executable button should find the correct PHP Version and Xdebug debugger configuration.
 
 - `Path mappings`:
