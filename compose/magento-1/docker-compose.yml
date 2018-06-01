@@ -1,12 +1,11 @@
 # Mark Shust's Docker Configuration for Magento (https://github.com/markoshust/docker-magento)
-# Version 12.0.0
+# Version 13.0.0
 
 version: "3"
 
 services:
   app:
     build: images/nginx
-    restart: always
     ports:
       - 80:8000
     links:
@@ -18,14 +17,13 @@ services:
       - sockdata:/sock
 
   phpfpm:
-    image: markoshust/magento-php:5.6-fpm
-    restart: always
+    image: markoshust/magento-php:5.6-fpm-2
     links:
       - db
     volumes: *appvolumes
 
   cron:
-    image: markoshust/magento-php:5.6-fpm
+    image: markoshust/magento-php:5.6-fpm-2
     user: root
     command: /usr/local/bin/cronstart
     tty: true
@@ -35,7 +33,6 @@ services:
 
   db:
     image: percona:5.7
-    restart: always
     ports:
       - 3306:3306
     env_file: env/db.env
