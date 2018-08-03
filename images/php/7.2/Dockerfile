@@ -1,4 +1,4 @@
-FROM php:7.1-fpm
+FROM php:7.2-fpm
 MAINTAINER Mark Shust <mark@shust.com>
 
 RUN apt-get update && apt-get install -y \
@@ -24,7 +24,6 @@ RUN docker-php-ext-install \
   gd \
   intl \
   mbstring \
-  mcrypt \
   opcache \
   pdo_mysql \
   soap \

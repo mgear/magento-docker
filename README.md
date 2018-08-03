@@ -5,27 +5,35 @@ Mark Shust's Docker Configuration for Magento
 View Dockerfiles:
 
 - [markoshust/magento-nginx (Docker Hub)](https://hub.docker.com/r/markoshust/magento-nginx/)
-	- 1.13
-		- [`latest`, `1.13`, `1.13-3`](https://github.com/markoshust/docker-magento/tree/master/images/nginx/1.13)
-		- [`1.13-2`](https://github.com/markoshust/docker-magento/tree/12.0.0/images/nginx/1.13)
-		- [`1.13-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/nginx/1.13)
-		- [`1.13-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/nginx/1.13)
+  - 1.13
+      - [`latest`, `1.13`, `1.13-3`](https://github.com/markoshust/docker-magento/tree/master/images/nginx/1.13)
+      - [`1.13-2`](https://github.com/markoshust/docker-magento/tree/12.0.0/images/nginx/1.13)
+      - [`1.13-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/nginx/1.13)
+      - [`1.13-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/nginx/1.13)
 - [markoshust/magento-php (Docker Hub)](https://hub.docker.com/r/markoshust/magento-php/)
-	- 7.1
-		- [`latest`, `7.1-fpm`, `7.1-fpm-3`](https://github.com/markoshust/docker-magento/tree/master/images/php/7.1)
-		- [`7.1-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/7.1)
-		- [`7.1-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/7.1)
-		- [`7.1-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/7.1)
-	- 7.0
-		- [`7.0-fpm`, `7.0-fpm-3`](https://github.com/markoshust/docker-magento/tree/master/images/php/7.0)
-		- [`7.0-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/7.0)
-		- [`7.0-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/7.0)
-		- [`7.0-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/7.0)
-	- 5.6
-		- [`5.6-fpm`, `5.6-fpm-3`](https://github.com/markoshust/docker-magento/tree/master/images/php/5.6)
-		- [`5.6-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/5.6)
-		- [`5.6-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/5.6)
-		- [`5.6-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/5.6)
+  - 7.2
+      - [`dev`, `7.2-fpm`](https://github.com/markoshust/docker-magento/tree/master/images/php/7.2)
+  - 7.1
+      - [`latest`, `7.1-fpm`, `7.1-fpm-5`](https://github.com/markoshust/docker-magento/tree/master/images/php/7.1)
+      - [`7.1-fpm-4`](https://github.com/markoshust/docker-magento/tree/15.0.0/images/php/7.1)
+      - [`7.1-fpm-3`](https://github.com/markoshust/docker-magento/tree/14.0.1/images/php/7.1)
+      - [`7.1-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/7.1)
+      - [`7.1-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/7.1)
+      - [`7.1-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/7.1)
+  - 7.0
+      - [`7.0-fpm`, `7.0-fpm-5`](https://github.com/markoshust/docker-magento/tree/master/images/php/7.0)
+      - [`7.0-fpm-4`](https://github.com/markoshust/docker-magento/tree/15.0.0/images/php/7.0)
+      - [`7.0-fpm-3`](https://github.com/markoshust/docker-magento/tree/14.0.1/images/php/7.0)
+      - [`7.0-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/7.0)
+      - [`7.0-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/7.0)
+      - [`7.0-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/7.0)
+  - 5.6
+      - [`5.6-fpm`, `5.6-fpm-5`](https://github.com/markoshust/docker-magento/tree/master/images/php/5.6)
+      - [`5.6-fpm-4`](https://github.com/markoshust/docker-magento/tree/15.0.0/images/php/5.6)
+      - [`5.6-fpm-3`](https://github.com/markoshust/docker-magento/tree/14.0.1/images/php/5.6)
+      - [`5.6-fpm-2`](https://github.com/markoshust/docker-magento/tree/13.0.0/images/php/5.6)
+      - [`5.6-fpm-1`](https://github.com/markoshust/docker-magento/tree/11.1.5/images/php/5.6)
+      - [`5.6-fpm-0`](https://github.com/markoshust/docker-magento/tree/11.0.0/images/php/5.6)
 
 ## Usage
 
@@ -117,11 +125,15 @@ See the `compose` folder for sample setups for both Magento 1 and Magento 2. Bas
 - `bin/composer`: Run the composer binary. Ex. `bin/composer install`
 - `bin/download`: Download a version of Magento to the `src` directory. Ex. `bin/download 2.2.2`
 - `bin/fixperms`: This will fix filesystem ownerships and permissions within Docker.
+- `bin/grunt`: Run the grunt binary. Note that this runs the version from the node_modules directory for project version parity. Ex. `bin/grunt exec`
 - `bin/initloopback`: Setup your ip loopback for proper Docker ip resolution.
 - `bin/magento`: Run the Magento CLI. Ex: `bin/magento cache:flush`
+- `bin/node`: Run the node binary. Ex. `bin/node --version`
+- `bin/npm`: Run the npm binary. Ex. `bin/npm install`
 - `bin/root`: Run any CLI command as root without going into the bash prompt. Ex `bin/root apt-get install nano`
 - `bin/setup`: Run the Magento setup process to install Magento from the source code.
 - `bin/start`: Start the Docker Compose process and your app. Ctrl+C to stop the process.
+- `bin/stop`: Stop the Docker Compose process and your app. Use if Ctrl+C isn't working or to stop the containers from another shell.
 - `bin/xdebug`: Disable or enable Xdebug. Ex. `bin/xdebug enable`
 
 ## Misc Info
@@ -137,20 +149,20 @@ First, enable Xdebug in the PHP-FPM container by running: `bin/xdebug enable`, t
 Then, open `PHPStorm > Preferences > Languages & Frameworks > PHP` and configure:
 
 - `CLI Interpreter`:
-	- Create a new interpreter and specify `From Docker`, and name it `phpfpm`.
-	- Choose `Docker`, then select the `markoshust/magento-php:7-0-fpm` image name, and set the `PHP Executable` to `php`.
-	- Under `Additional > Debugger Extension`, enter
-		- for PHP 5.6: `/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so`
-		- for PHP 7.0: `/usr/local/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so`
-		- for PHP 7.1: `/usr/local/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so`
-	- Hitting the reload executable button should find the correct PHP Version and Xdebug debugger configuration.
+  - Create a new interpreter and specify `From Docker`, and name it `phpfpm`.
+  - Choose `Docker`, then select the `markoshust/magento-php:7-0-fpm` image name, and set the `PHP Executable` to `php`.
+  - Under `Additional > Debugger Extension`, enter
+    - for PHP 5.6: `/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so`
+    - for PHP 7.0: `/usr/local/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so`
+    - for PHP 7.1: `/usr/local/lib/php/extensions/no-debug-non-zts-20160303/xdebug.so`
+  - Hitting the reload executable button should find the correct PHP Version and Xdebug debugger configuration.
 
 - `Path mappings`:
-	- Don't do anything here as the next `Docker container` step will automatically setup a path mapping from `/var/www/html` to `./src`.
+  - Don't do anything here as the next `Docker container` step will automatically setup a path mapping from `/var/www/html` to `./src`.
 
 - `Docker container`:
-	- Remove any pre-existing volume bindings.
-	- Ensure a volume binding has been setup for Container path of `/var/www/html` mapped to the Host path of `./src`.
+  - Remove any pre-existing volume bindings.
+  - Ensure a volume binding has been setup for Container path of `/var/www/html` mapped to the Host path of `./src`.
 
 Open `PHPStorm > Preferences > Languages & Frameworks > PHP > Debug` and set Debug Port to `9001`.
 
