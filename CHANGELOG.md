@@ -8,6 +8,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - New PHP 7.2 image is now available on the dev tag. Please report any issues.
 
+## [16.2.0] - 2018-08-29
+- Updated docker-compose.yml file to volume mount vendor folder for 50% performance increase
+
+## [16.1.0] - 2018-08-23
+
+### Added
+- Added php ssh2 extension
+
+### Deprecated
+- The PHP 5.6 release will no longer be maintained, the last released version is 16.0.0
+
+## [16.0.0] - 2018-08-22
+
+### Changed
+- Moved `dev/auth.json` to `dev/composer/auth.json`
+- Added `client_max_body_size 20M` to nginx.conf
+- Added `upload_max_filesize = 20M` and `post_max_size = 20M` to php.ini
+
 ## [15.0.1] - 2018-08-03
 
 ### Fixed

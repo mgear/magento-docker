@@ -1,11 +1,11 @@
 # Mark Shust's Docker Configuration for Magento (https://github.com/markoshust/docker-magento)
-# Version 15.0.1
+# Version 16.2.0
 
 version: "3"
 
 services:
   app:
-    image: markoshust/magento-nginx:1.13-3
+    image: markoshust/magento-nginx:1.13-4
     ports:
       - 80:8000
     links:
@@ -15,19 +15,18 @@ services:
       - ./src:/var/www/html:delegated
       - ~/.composer:/var/www/html/var/composer_home:delegated
       - ~/.composer:/var/www/.composer:delegated
-      - ./dev/auth.json:/var/www/html/var/composer_home/auth.json
-      - ./dev/auth.json:/var/www/.composer/auth.json
-      - sockdata:/sock
+      - appdata:/sock
+      - appdata:/var/www/html/vendor
 
   phpfpm:
-    image: markoshust/magento-php:7.1-fpm-5
+    image: markoshust/magento-php:7.1-fpm-7
     links:
       - db
     volumes: *appvolumes
 
   # Disabling cron by default as it uses higher CPU, enable if needed
   #cron:
-  #  image: markoshust/magento-php:7.1-fpm-5
+  #  image: markoshust/magento-php:7.1-fpm-7
   #  user: root
   #  command: /usr/local/bin/cronstart
   #  tty: true
@@ -44,5 +43,5 @@ services:
       - dbdata:/var/lib/mysql
 
 volumes:
+  appdata:
   dbdata:
-  sockdata:
