@@ -1,11 +1,11 @@
-# Mark Shust's Docker Configuration for Magento (https://github.com/markoshust/docker-magento)
-# Version 20.0.0
+# Mark Shust's Docker Configuration for Magento (https://github.com/markshust/docker-magento)
+# Version 23.0.0
 
 version: "3"
 
 services:
   app:
-    image: markoshust/magento-nginx:1.13-6
+    image: markoshust/magento-nginx:1.13-7
     ports:
       - "80:8000"
       - "443:8443"
@@ -13,31 +13,32 @@ services:
       - db
       - phpfpm
     volumes: &appvolumes
-      - ./src:/var/www/html:delegated
       - ~/.composer:/var/www/.composer:delegated
-      - appdata:/sock
-      # Linux only: uncomment the below volume mounts
-      - appdata:/var/www/html/app
-      - appdata:/var/www/html/bin
-      - appdata:/var/www/html/dev
-      - appdata:/var/www/html/generated
-      - appdata:/var/www/html/lib
-      - appdata:/var/www/html/phpserver
-      - appdata:/var/www/html/pub
-      - appdata:/var/www/html/setup
-      - appdata:/var/www/html/update
-      - appdata:/var/www/html/var
-      - appdata:/var/www/html/vendor
+      - appdata:/var/www/html
+      - sockdata:/sock
 
   phpfpm:
     image: markoshust/magento-php:7.2-fpm-0
     links:
       - db
     volumes: *appvolumes
-    # Linux only: host.docker.internal doesn't exist https://github.com/docker/for-linux/issues/264
-    # Uncomment two lines below & replace IP with result of: docker run --rm alpine ip route | awk 'NR==1 {print $3}'
-    #extra_hosts:
-    #  - "host.docker.internal:IP"
+
+  db:
+    image: percona:5.7
+    ports:
+      - "3306:3306"
+    env_file: env/db.env
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  redis:
+    image: redis:5.0
+
+  elasticsearch:
+    image: elasticsearch:5.6
+    ports:
+      - "9200:9200"
+      - "9300:9300"
 
   # Disabling cron by default as it uses higher CPU, enable if needed
   #cron:
@@ -49,14 +50,7 @@ services:
   #    - db
   #  volumes: *appvolumes
 
-  db:
-    image: percona:5.7
-    ports:
-      - "3306:3306"
-    env_file: env/db.env
-    volumes:
-      - dbdata:/var/lib/mysql
-
 volumes:
   appdata:
   dbdata:
+  sockdata:
